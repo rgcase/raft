@@ -28,6 +28,9 @@ libraryDependencies ++= Seq(
   //"com.typesafe.akka" %% "akka-stream-testkit" % "2.4.12",
   //"com.typesafe.akka" %% "akka-testkit" % "2.4.12" % "test",
 
+  "ch.qos.logback" % "logback-classic" % "1.1.7",
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
+
   //"com.typesafe.akka" %% "akka-http-core" % "2.4.11",
   //"com.typesafe.akka" %% "akka-http-experimental" % "2.4.11",
   //"com.typesafe.akka" %% "akka-http-spray-json-experimental" % "2.4.11",
@@ -47,12 +50,6 @@ scalacOptions ++= Seq(
     "-language:implicitConversions",
     "-language:experimental.macros",
     "-unchecked",
-    //"-Ywarn-unused-import",
-    "-Ywarn-nullary-unit",
-    "-Xfatal-warnings",
-    "-Xlint",
-    //"-Yinline-warnings",
-    "-Ywarn-dead-code",
     "-Xfuture")
 
 initialCommands := "import com.rgcase.raft._"
@@ -62,4 +59,3 @@ SbtScalariform.scalariformSettings
 ScalariformKeys.preferences := ScalariformKeys.preferences.value
   .setPreference(AlignSingleLineCaseStatements, true)
   .setPreference(DoubleIndentClassDeclaration, true)
-  .setPreference(RewriteArrowSymbols, true)
